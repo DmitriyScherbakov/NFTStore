@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/registration_element"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/mainBgColor">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="REGISTRATION"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:background="@color/bars"/>
+
+
+<!--        Nickname-->
+            <TextView
+                android:id="@+id/nickname_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserrat"
+                android:layout_gravity="center_horizontal"
+                android:text="Nickname"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/nickname_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/login_button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/nicknameField"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="Enter your nickname"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/textColorHint"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/nickname_button"
+                    app:layout_constraintEnd_toEndOf="@+id/nickname_button"
+                    app:layout_constraintStart_toStartOf="@+id/nickname_button"
+                    app:layout_constraintTop_toTopOf="@+id/nickname_button"
+                    app:met_singleLineEllipsis="true" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        Email-->
+            <TextView
+                android:id="@+id/email_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserrat"
+                android:layout_gravity="center_horizontal"
+                android:text="Email address"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/email_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/login_button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/emailField"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="Enter your email"
+                    android:importantForAutofill="no"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="48dp"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/textColorHint"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/email_button"
+                    app:layout_constraintEnd_toEndOf="@+id/email_button"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/email_button"
+                    app:layout_constraintTop_toTopOf="@+id/email_button"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:met_singleLineEllipsis="true" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        Password-->
+            <TextView
+                android:id="@+id/password_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Password"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:layout_gravity="center_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email_button" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/password_button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/login_button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/passwordField"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="Enter a new password"
+                    android:importantForAutofill="no"
+                    android:inputType="textPassword"
+                    android:minHeight="48dp"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/textColorHint"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/password_button1"
+                    app:layout_constraintEnd_toEndOf="@+id/password_button1"
+                    app:layout_constraintStart_toStartOf="@+id/password_button1"
+                    app:layout_constraintTop_toTopOf="@+id/password_button1"
+                    app:met_singleLineEllipsis="true" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/password_button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/login_button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <EditText
+                    android:id="@+id/passwordField2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="Repeat your new password"
+                    android:importantForAutofill="no"
+                    android:inputType="textPassword"
+                    android:minHeight="48dp"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/textColorHint"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/password_button2"
+                    app:layout_constraintEnd_toEndOf="@+id/password_button2"
+                    app:layout_constraintStart_toStartOf="@+id/password_button2"
+                    app:layout_constraintTop_toTopOf="@+id/password_button2"
+                    app:met_singleLineEllipsis="true" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        Create account button-->
+            <ImageButton
+                android:id="@+id/create_account_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/app_name"
+                android:layout_gravity="center_horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/password_button2"
+                app:srcCompat="@drawable/create_account_button" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

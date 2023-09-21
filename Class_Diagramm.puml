@@ -1,0 +1,216 @@
+@startuml
+class com.example.nftstore.CollectionPageFragment {
+- {static} String ARG_PARAM1
+- {static} String ARG_PARAM2
+- String mParam1
+- String mParam2
+- RecyclerView recyclerView
+- CollectionAdapter collAdapter
++ {static} CollectionPageFragment newInstance(String,String)
++ void onCreate(Bundle)
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+}
+class com.example.nftstore.models.Collection {
+~ String name
++ String getName()
++ void setName(String)
++ String getAll_time_volume()
++ void setAll_time_volume(String)
++ String getCollection_image()
++ void setCollection_image(String)
++ String getCol_id()
++ void setCol_id(String)
++ String getCreator_name()
++ void setCreator_name(String)
++ String getFloor_price()
++ void setFloor_price(String)
++ String getAmount_of_nft()
++ void setAmount_of_nft(String)
+}
+class com.example.nftstore.ProfilePageFragment {
+- {static} String ARG_PARAM1
+- {static} String ARG_PARAM2
+- String mParam1
+- String mParam2
+- TextView nickname
+- ImageButton logOutButton
++ {static} ProfilePageFragment newInstance(String,String)
++ void onCreate(Bundle)
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+- void initViews(View)
+}
+class com.example.nftstore.AddNFT {
+- {static} int PICK_IMAGE_REQUEST
+- ImageButton load_nft
+- EditText imageUrl
+- ImageView image1
+- CardView cardView
+- TextView title
+~ String imageUrlStr
+~ boolean onSaleStr
+# void onCreate(Bundle)
+}
+class com.example.nftstore.models.Users {
+~ String nickname
++ String getNickname()
++ void setNickname(String)
++ String getEmail()
++ void setEmail(String)
++ String getAvatar_url()
++ void setAvatar_url(String)
++ String getBalance()
++ void setBalance(String)
+}
+class com.example.nftstore.NftPageFragment {
+- {static} String ARG_PARAM1
+- {static} String ARG_PARAM2
+- String mParam1
+- String mParam2
+- List<NFT> nftList
+- RecyclerView recyclerView
+- NftAdapter nftAdapter
+- ImageButton addNFTButton
++ {static} NftPageFragment newInstance(String,String)
++ void onCreate(Bundle)
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
+}
+class com.example.nftstore.models.MyProfile {
+- String nickname
++ String getAvatar_url()
++ void setAvatar_url(String)
++ String getBalance()
++ void setBalance(String)
++ String getNickname()
++ void setNickname(String)
++ String getEmail()
++ void setEmail(String)
++ String getPassword1()
++ void setPassword1(String)
++ String getPassword2()
++ void setPassword2(String)
+}
+class com.example.nftstore.adapter.CollectionAdapter {
+~ Context context
+~ List<Collection> collList
+- CollectionViewHolder holder
++ CollectionViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(CollectionViewHolder,int)
++ int getItemCount()
+}
+class com.example.nftstore.adapter.CollectionAdapter.CollectionViewHolder {
+~ ImageView collection_image
+~ TextView coll_name
+}
+class com.example.nftstore.adapter.NftAdapter {
+~ Context context
+~ List<NFT> nftList
+- NftViewHolder holder
++ NftViewHolder onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(NftViewHolder,int)
++ int getItemCount()
+}
+class com.example.nftstore.adapter.NftAdapter.NftViewHolder {
+~ ImageView nftImage
+~ TextView name
+}
+class com.example.nftstore.DB.DBQuery {
++ {static} FirebaseFirestore g_firestore
++ {static} MyProfile myProfile
++ {static} List<NFT> g_nftList
++ {static} List<Users> g_usersList
++ {static} List<Collection> g_collectionList
++ {static} int g_selected_col_index
++ {static} int g_selected_owner_index
++ {static} int g_usersCount
++ {static} int NOT_VISITED
++ {static} String g_selected_URL
++ {static} String g_selected_URL_collection_image
++ {static} void createUserData(String,String,MyCompleteListener)
++ {static} void getUserData(MyCompleteListener)
++ {static} void getAllUsersData(MyCompleteListener)
++ {static} void createNFTData(String,String,String,String,boolean,String,MyCompleteListener)
++ {static} void createCollectionData(String,String,String,String,String,String,MyCompleteListener)
++ {static} void loadData(MyCompleteListener)
++ {static} void getUsersCount(MyCompleteListener)
++ {static} void loadNFT(MyCompleteListener)
++ {static} void loadCollections(MyCompleteListener)
++ {static} void buyingNFT(String,String,String,boolean,String,String,MyCompleteListener)
++ {static} void sellingNFT(String,String,String,boolean,String,String,MyCompleteListener)
+}
+class com.example.nftstore.Authorization {
+~ ImageButton enter_button
+~ FirebaseAuth mAuth
+- String nicknameRegStr
+~ ConstraintLayout root
+~ Dialog progress_dialog
+# void onCreate(Bundle)
+- void openRegistrationWindow()
+}
+class com.example.nftstore.MainActivity {
+~ BottomNavigationView bottomNavigationView
+~ NftPageFragment nftFragment
+~ CollectionPageFragment collectionFragment
+~ ProfilePageFragment profileFragment
+# void onCreate(Bundle)
++ boolean onNavigationItemSelected(MenuItem)
+}
+class com.example.nftstore.models.NFT {
+~ String URL
+~ boolean onSale
++ String getURL()
++ void setURL(String)
++ String getCollection()
++ void setCollection(String)
++ String getName()
++ void setName(String)
++ String getOwner()
++ void setOwner(String)
++ String getPrice()
++ void setPrice(String)
++ boolean isOnSale()
++ void setOnSale(boolean)
+}
+class com.example.nftstore.NftViewPage {
+- String URL
+- ImageView avatar
+- TextView coll_name
+- ImageButton buy_btn
+- EditText confirm_field_buy
+- int priceInt
+# void onCreate(Bundle)
+- void openBuyWindow()
+- void openSellWindow()
+}
+class com.example.nftstore.CollectionViewPage {
+- ImageView creator_avatar
+- TextView coll_name
+- String URL
+- List<NFT> collNftList
+# void onCreate(Bundle)
+}
+class com.example.nftstore.Library {
+- RecyclerView recyclerViewOwn
+- NftAdapter nftAdapterOwn
+- List<NFT> ownNftList
+- List<NFT> onMarketNftList
+# void onCreate(Bundle)
+}
+
+
+androidx.fragment.app.Fragment <|-- com.example.nftstore.CollectionPageFragment
+androidx.fragment.app.Fragment <|-- com.example.nftstore.ProfilePageFragment
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nftstore.AddNFT
+androidx.fragment.app.Fragment <|-- com.example.nftstore.NftPageFragment
+com.example.nftstore.adapter.Adapter <|-- com.example.nftstore.adapter.CollectionAdapter
+com.example.nftstore.adapter.CollectionAdapter +.. com.example.nftstore.adapter.CollectionAdapter.CollectionViewHolder
+com.example.nftstore.adapter.ViewHolder <|-- com.example.nftstore.adapter.CollectionAdapter.CollectionViewHolder
+com.example.nftstore.adapter.Adapter <|-- com.example.nftstore.adapter.NftAdapter
+com.example.nftstore.adapter.NftAdapter +.. com.example.nftstore.adapter.NftAdapter.NftViewHolder
+com.example.nftstore.adapter.ViewHolder <|-- com.example.nftstore.adapter.NftAdapter.NftViewHolder
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nftstore.Authorization
+com.example.nftstore.OnNavigationItemSelectedListener <|.. com.example.nftstore.MainActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nftstore.MainActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nftstore.NftViewPage
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nftstore.CollectionViewPage
+androidx.appcompat.app.AppCompatActivity <|-- com.example.nftstore.Library
+@enduml

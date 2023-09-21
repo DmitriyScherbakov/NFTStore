@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "517584567963",
+    "project_id": "nftstore-5d79d",
+    "storage_bucket": "nftstore-5d79d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517584567963:android:56af63523d228d11ad903e",
+        "android_client_info": {
+          "package_name": "com.example.nftstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "517584567963-kvi3d56bruup6cem36mdnsgil8t8in5t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrDxtdltmdthHIR-n5992JMSwol5OS0zc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "517584567963-kvi3d56bruup6cem36mdnsgil8t8in5t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
